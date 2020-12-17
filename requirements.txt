@@ -1,2 +1,4 @@
-requests
-wikipedia
+speechrecognition
+playsound
+gTTS
+random
