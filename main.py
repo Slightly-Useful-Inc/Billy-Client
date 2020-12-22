@@ -11,7 +11,7 @@ if checkServer:
     if login:
         print("Logged In")
         billy = billy.Billy(version)
-        #billy.loadModules()
+        billy.loadModules()
         billy.loadMods()
         billy.main()
     else:

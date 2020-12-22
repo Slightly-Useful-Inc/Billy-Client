@@ -18,7 +18,9 @@ class Billy():
             consoleInput = str(input(f"Billy {self.version}>"))
             for module in self.modules:
                 sendOff = module.main()
-                sendOff.main(consoleInput)
+                if sendOff.main(consoleInput):
+                    break
+                
             
 
 
