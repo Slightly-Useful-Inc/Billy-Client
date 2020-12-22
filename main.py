@@ -11,6 +11,8 @@ if checkServer:
     if login:
         print("Logged In")
         billy = billy.Billy()
+        #billy.loadModules()
+        billy.loadMods()
         billy.main()
     else:
         print("Incorrect Username or Password")
