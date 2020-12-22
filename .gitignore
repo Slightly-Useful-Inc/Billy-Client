@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-/modules/*
+
 
 *.mp3
 # Distribution / packaging

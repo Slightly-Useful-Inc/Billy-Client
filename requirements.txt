@@ -1,4 +1,1 @@
-speechrecognition
-playsound
-gTTS
 requests

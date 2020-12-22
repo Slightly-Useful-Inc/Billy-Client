@@ -1,6 +1,6 @@
 import sys, time
 import api.user, api.server
-import mods.modHandler
+import billy
 
 checkServer = api.server.severStatus()
 
@@ -10,10 +10,8 @@ if checkServer:
     login = api.user.userAuth(username, password)
     if login:
         print("Logged In")
-        mods.modHandler.main()
-        while True:
-            command = input("Billy v1.0>")
-            mods.modHandler.runThough(command)
+        billy = billy.Billy()
+        billy.main()
     else:
         print("Incorrect Username or Password")
 
