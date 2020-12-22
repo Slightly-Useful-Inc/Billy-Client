@@ -1,7 +1,6 @@
 import sys, time
-import voice.reqRes
 import api.user, api.server
-
+import mods.modHandler
 
 checkServer = api.server.severStatus()
 
@@ -10,13 +9,11 @@ if checkServer:
     password = input("Password: ")
     login = api.user.userAuth(username, password)
     if login:
-        req = voice.reqRes.reqRes()
-
-        time.sleep(1)
-        req.billyTalk("How can I help you!")
-        while 1:
-            req.voice_data = req.get_audio()
-            req.respond(req.voice_data)
+        print("Logged In")
+        mods.modHandler.main()
+        while True:
+            command = input("Billy v1.0>")
+            mods.modHandler.runThough(command)
     else:
         print("Incorrect Username or Password")
 
