@@ -7,14 +7,15 @@ from importlib import import_module
 
 class Billy():
     
-    def __init__(self):
+    def __init__(self, version):
+        self.version = version
         self.modules = []
         
     
 
     def main(self):
         while True:
-            consoleInput = str(input("Billy v1.0>"))
+            consoleInput = str(input(f"Billy {self.version}>"))
             for module in self.modules:
                 sendOff = module.main()
                 sendOff.main(consoleInput)
