@@ -12,5 +12,7 @@ if auth.user.checkCreds(username, password):
     billy.loadModules()
     billy.loadMods()
     billy.main()
+    quit()
 else:
     print("Incorrect Username or Password")
+    quit()

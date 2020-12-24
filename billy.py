@@ -16,6 +16,8 @@ class Billy():
     def main(self):
         while True:
             consoleInput = str(input(f"Billy {self.version}>"))
+            if consoleInput == "exit":
+                break
             for module in self.modules:
                 sendOff = module.main()
                 if sendOff.main(consoleInput):
