@@ -1,21 +1,16 @@
 import sys, time
-import api.user, api.server
 import billy
-
-checkServer = api.server.severStatus()
+import auth.user
 version = 'v1.0'
-if checkServer:
-    username = input("Username: ")
-    password = input("Password: ")
-    login = api.user.userAuth(username, password)
-    if login:
-        print("Logged In")
-        billy = billy.Billy(version)
-        billy.loadModules()
-        billy.loadMods()
-        billy.main()
-    else:
-        print("Incorrect Username or Password")
 
+
+username = input("Username: ")
+password = input("Password: ")
+if auth.user.checkCreds(username, password):
+    print("Logged In")
+    billy = billy.Billy(version)
+    billy.loadModules()
+    billy.loadMods()
+    billy.main()
 else:
-    print("Server Error, check your internet connection")
+    print("Incorrect Username or Password")
