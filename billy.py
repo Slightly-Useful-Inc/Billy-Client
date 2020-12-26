@@ -18,13 +18,16 @@ class Billy():
             consoleInput = str(input(f"Billy {self.version}>"))
             if consoleInput == "exit":
                 break
-            for module in self.modules:
-                sendOff = module.main()
-                if sendOff.main(consoleInput):
-                    break
+            if not self.sendOff(consoleInput):
+                print("Command Not Found")
                 
             
-
+    def sendOff(self, command):
+        for module in self.modules:
+            execMain = module.main()
+            if execMain.main(command):
+                return True
+        return False
 
 
     def loadMods(self):
